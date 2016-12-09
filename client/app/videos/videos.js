@@ -11,8 +11,8 @@ angular.module('co.videos', [])
       for (var j = 0; j < resp[i].rating.length; j++) {
         rating += resp[i].rating[j];
       }
-      resp[i]["overallRating"] = rating/resp[i].rating.length;
-      resp[i]["videoType"] = resp[i].url.split('.')[resp[i].url.split('.').length];
+      resp[i]['overallRating'] = rating / resp[i].rating.length;
+      resp[i]['videoType'] = resp[i].url.split('.')[resp[i].url.split('.').length];
     }
     $scope.data.videos = resp;
   });

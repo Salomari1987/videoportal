@@ -15,7 +15,7 @@ angular.module('co', [
       templateUrl: 'app/videos/videos.html',
       controller: 'VideosController'
     })
-    .otherwise({redirectTo: '/'})
+    .otherwise({redirectTo: '/'});
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
   $httpProvider.interceptors.push('AttachSessionId');
@@ -28,7 +28,7 @@ angular.module('co', [
   var attach = {
     request: function (config) {
       config.params = config.params || {};
-      var sessionId = $window.localStorage.getItem("sessionId");
+      var sessionId = $window.localStorage.getItem('sessionId');
       if (sessionId) {
         config.params.sessionId = sessionId;
       }

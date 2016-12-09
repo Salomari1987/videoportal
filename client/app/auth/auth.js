@@ -11,11 +11,11 @@ angular.module('co.auth', [])
         // if user was successfully authenticated
         // then attach session id and username to local storage
         // for use elsewhere in the application
-        $window.localStorage.setItem("sessionId", data.sessionId);
-        $window.localStorage.setItem("username", data.username);
+        $window.localStorage.setItem('sessionId', data.sessionId);
+        $window.localStorage.setItem('username', data.username);
         $location.path('/');     
       } else {
-        console.log(data.error)
+        console.log(data.error);
       }
     })
     .catch(function(error) {

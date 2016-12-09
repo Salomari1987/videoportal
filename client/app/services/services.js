@@ -16,7 +16,7 @@ angular.module('co.services', [])
     .catch(function (err) {
       // if error is sent back by API, log it in console
       console.log(err);
-    })
+    });
   };
   var getOne = function (videoId) {
     // Send GET http request to fetch one video from API
@@ -52,7 +52,7 @@ angular.module('co.services', [])
     getMany: getMany,
     getOne: getOne,
     rateVideo: rateVideo
-  }
+  };
 })
 
 //Factory to manage all user authentication related communications with backend
@@ -66,13 +66,13 @@ angular.module('co.services', [])
     })
     .then(function (resp) {
       return resp.data;
-    })
+    });
   };
 
   // Check if user is authenticated by checking if session id is registered
   // in local storage
   var isAuth = function () {
-    return !!$window.localStorage.getItem("sessionId");
+    return !!$window.localStorage.getItem('sessionId');
   };
 
   // Log out user
@@ -86,8 +86,8 @@ angular.module('co.services', [])
       // then remove session id and username from local storage
       if (resp.data.status === 'success') {
         console.log('success');
-        $window.localStorage.removeItem("sessionId");
-        $window.localStorage.removeItem("username");
+        $window.localStorage.removeItem('sessionId');
+        $window.localStorage.removeItem('username');
         $location.path('/');
       } else {
         return resp.data;
