@@ -8,6 +8,9 @@ angular.module('co.auth', [])
     Auth.login({username: $scope.user.username, password: md5.createHash($scope.user.password || '')})
     .then(function(data) {
       if (data.status === 'success') {
+        // if user was successfully authenticated
+        // then attach session id and username to local storage
+        // for use elsewhere in the application
         $window.localStorage.setItem("sessionId", data.sessionId);
         $window.localStorage.setItem("username", data.username);
         $location.path('/');     
