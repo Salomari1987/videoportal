@@ -13,7 +13,7 @@ iisnode.yml
 .Spotlight-V100
 .Trashes
 *.sqlite
-./client/bower_components/**/*
+client/bower_components/**/*
 
 # Logs
 logs
