@@ -1,0 +1,8 @@
+**/node_modules
+**/*.min.js
+**/coverage
+**/bower_components
+**/lib
+**/vendor
+**/*.min.js
+**/client/bower_components
