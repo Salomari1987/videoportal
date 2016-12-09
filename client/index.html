@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="co" class="no-js">
 <head>
+	<meta charset="utf-8">
 	<title>Crossover Video Portal</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
 </head>
 <body>
 	<h2>Crossover Video Portal</h2>
-	<hr />
-	If you see this page, it means you have configured the app correctly. Put your client side code in /client folder and the application will start serving your code.
+	<a href='#/login'>login</a>
+	<a href='#/aaa'>laaa</a>
+	<div id="content" ng-view></div>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-md5/angular-md5.js"></script>
+	<script src="app/services/services.js"></script>
+	<script src="app/auth/auth.js"></script>
+	<script src="app/videos/videos.js"></script>
+	<script src="app/app.js"></script>
 </body>
 </html>

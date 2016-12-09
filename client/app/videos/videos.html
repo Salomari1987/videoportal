@@ -1,0 +1,9 @@
+<div ng-repeat='video in data.videos'>
+	<h4> {{video.title}} </h4>
+	<video width="200" height="200">
+		<source src={{video.url}} type="video/{{videoType}}">
+		Your browser does not support this video format
+	</video>
+	<p>  {{video.videoType}} </p>
+	<p> {{video.description}} </p>
+</div>
