@@ -1,0 +1,18 @@
+{
+  "name": "crossover",
+  "version": "0.0.0",
+  "authors": ["Salah Alomari"],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.5.x",
+    "angular-route": "~1.5.x",
+    "angular-mocks": "~1.5.x",
+    "angular-md5": "latest"
+  }
+}
