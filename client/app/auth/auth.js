@@ -1,7 +1,8 @@
-angular.module('co.auth', [])
+angular.module('co.auth', ['ngAnimate', 'ui.bootstrap'])
 
 .controller('AuthController', function ($scope, $window, $location, md5, Auth) {
   $scope.user = {};
+  
   $scope.login = function () {
     // Send username and password md5 hash to Auth factory
     // The password is hashed using angular md5 package
@@ -13,7 +14,7 @@ angular.module('co.auth', [])
         // for use elsewhere in the application
         $window.localStorage.setItem('sessionId', data.sessionId);
         $window.localStorage.setItem('username', data.username);
-        $location.path('/');     
+        $location.path('/videos');     
       } else {
         console.log(data.error);
       }
