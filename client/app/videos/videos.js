@@ -1,6 +1,4 @@
-angular.module('co.videos', [      
-      "ngSanitize",
-      "com.2fdevs.videogular"])
+angular.module('co.videos', ["ngSanitize"])
 
 .controller('VideosController', function ($sce, $scope, $window, $location, Videos, HelperFuncs) {
   $scope.data = {};
