@@ -11,7 +11,7 @@ angular.module('co.services', [])
     })
     .then(function (resp) {
       // return http response body to controller
-      return resp.data;
+      return resp.data.data;
     })
     .catch(function (err) {
       // if error is sent back by API, log it in console
@@ -25,21 +25,18 @@ angular.module('co.services', [])
       url: '/video?videoId=' + videoId
     })
     .then(function (resp) {
-      return resp.data;
+      return resp.data.data;
     })
     .catch(function (err) {
       console.log(err);
     });
   };
-  var rateVideo = function (videoId, rating) {
+  var rateVideo = function (data) {
     // send rating to video specified by 'videoId'
     return $http ({
       method: 'POST',
       url: '/video/ratings',
-      data: {
-        videoId: videoId,
-        rating: rating
-      }
+      data: data
     })
     .then(function (resp) {
       return resp.data;
