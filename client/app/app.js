@@ -33,7 +33,7 @@ angular.module('co', [
   // then add it to the params so the server can validate the request
   var attach = {
     request: function (config) {
-      if(config.url.startsWith("template/") || config.url.startsWith("vg-templates/")){
+      if(config.url.startsWith("template/") || config.url.startsWith("uib/") || config.url.startsWith("vg-templates/")){
         // Not modifying requests to these urls, 
         // as they are angular template cache requests
         return config;
