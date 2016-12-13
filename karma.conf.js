@@ -16,8 +16,14 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'client/bower_components/angular/angular.js',
-      'client/bower_components/angular-route/angular-route.js',
+      'client/bower_components/angular-sanitize/angular-sanitize.min.js',
+      'client/bower_components/videogular/videogular.min.js',
+      'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+      'client/bower_components/angular-animate/angular-animate.min.js',
+      'client/bower_components/angular-ui-router/release/angular-ui-router.min.js',
+      'client/bower_components/angular-md5/angular-md5.min.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
+      'client/helpers/*.js',
       'client/app/**/*.js',
       'specs/**/*.js'
     ],
@@ -35,7 +41,8 @@ module.exports = function(config) {
       // Source files you want to generate coverage reports for
       // This should not include tests or libraries
       // These files will be instrumented by Istanbul
-      'client/app/**/*.js': ['coverage']
+      'client/app/**/*.js': ['coverage'],
+      'client/helpers/**/*.js': ['coverage']
     },
 
     // Configure the reporter
@@ -44,7 +51,7 @@ module.exports = function(config) {
       dir: 'results/coverage/'
     },
     // If browser does not capture in given timeout [ms], kill it
-    captureTimeout: 20000,
+    captureTimeout: 40000,
 
     specReporter: {
       maxLogLines: 10,         // limit number of lines logged per test 
