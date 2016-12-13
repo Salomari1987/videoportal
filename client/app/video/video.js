@@ -19,16 +19,3 @@ angular.module('co.video', [
      });   
     }
 );
-
-// .controller('VideoController', function ($scope, Videos, HelperFuncs, $window, $stateParams) {
-// 	$scope.data = {}
-//   console.log("video")
-//   Videos.getOne($stateParams.id)
-// 	.then(function(video) {
-//     console.log(video, "video")
-// 		$scope.data.video = video;
-// 	})
-// 	.catch(function(error) {
-// 	  console.error(error);
-// 	});
-// });
