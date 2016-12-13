@@ -7,7 +7,7 @@ var states = [
 angular.module('co', [
   'ui.router',
   'angular-md5',
-  'ngAnimate', 
+  'ngAnimate',
   'ui.bootstrap',
   'co.auth',
   'co.videos',
@@ -61,7 +61,6 @@ angular.module('co', [
   // TODO: not working, fix it
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
     if (event  && !Auth.isAuth()) {
-      console.log(!Auth.isAuth())
       $location.path('/login');
     } else if (toState.url === '/logout') {
       console.log('logout')
