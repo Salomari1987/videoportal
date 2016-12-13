@@ -1,14 +1,14 @@
 <div class="container col-xs-12">
 	<div infinite-scroll='data.loadMore()' infinite-scroll-disabled='data.busy' infinite-scroll-distance='1' class="row">
-	    <div ng-repeat='video in data.videos' class="col-sm-4">
+	    <div ng-repeat='video in data.videos' class="col-sm-4" style="margin-top:10px;">
 		    <div class="text">
-			    <h5 >	<a ng-href="#/video/{{video._id}}">{{video.name}}</a></h5>
+			    <h5 >	<a ng-href="#/video/{{video._id}}" style="color:black;">{{video.name}}</a></h5>
 			</div>
 			<videogular class="embed-responsive embed-responsive-16by9" vg-theme="video.theme.url" vg-player-ready="onPlayerReady($API, $index)" vg-update-state="onUpdateState($state, $index)">
 		        <vg-media class="embed-responsive-item" style="background:black;" vg-src="video.source" vg-native-controls="true">
 		        </vg-media>
 		    </videogular>
-		<rating ng-model="video.overallRating" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-click="rateVideo(video._id, video.overallRating)"></rating>
+		    <span uib-rating ng-model="video.overallRating" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating" ng-click="rateVideo(video._id, video.overallRating)"></span>
 		</div>
     </div>
     <div ng-show='data.busy'>Loading data...</div>

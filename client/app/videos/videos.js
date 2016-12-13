@@ -21,6 +21,7 @@ angular.module('co.videos', ["ngSanitize", "infinite-scroll", "com.2fdevs.videog
                 }
             }
         };
+
   $scope.hoveringOver = function(value) {
     $scope.overStar = value;
     $scope.percent = 100 * (value / $scope.max);
