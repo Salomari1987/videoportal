@@ -5,9 +5,10 @@ angular.module('co.services', [])
   var getMany = function (skip, limit) {
     // Send GET http request to fetch videos from API
     // Will add skip and limit params to request
+    var url = '/videos?' + 'skip=' + skip + '&limit=' + limit;
     return $http({
       method: 'GET',
-      url: '/videos?' + 'skip=' + skip + '&limit=' + limit,
+      url: url
     })
     .then(function (resp) {
       // return http response body to controller
@@ -82,7 +83,6 @@ angular.module('co.services', [])
       // if user logout was successful
       // then remove session id and username from local storage
       if (resp.data.status === 'success') {
-        console.log('success');
         $window.localStorage.removeItem('sessionId');
         $window.localStorage.removeItem('username');
         $location.path('/');
