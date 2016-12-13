@@ -33,7 +33,7 @@ angular.module('co', [
   // then add it to the params so the server can validate the request
   var attach = {
     request: function (config) {
-      if(config.url.startsWith("template/") || config.url.startsWith("uib/") || config.url.startsWith("vg-templates/")){
+      if (config.url.startsWith('template/') || config.url.startsWith('uib/') || config.url.startsWith('vg-templates/')) {
         // Not modifying requests to these urls, 
         // as they are angular template cache requests
         return config;
@@ -47,7 +47,7 @@ angular.module('co', [
         return config;
       }
     }
-  }
+  };
   return attach;
 })
 .run(function ($rootScope, $location, Auth, $window) {
@@ -60,10 +60,9 @@ angular.module('co', [
   // if it's not valid, we then redirect back to signin/signup
   // TODO: not working, fix it
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-    if (event  && !Auth.isAuth()) {
+    if (event && !Auth.isAuth()) {
       $location.path('/login');
     } else if (toState.url === '/logout') {
-      console.log('logout')
       $window.localStorage.removeItem('sessionId');
       $window.localStorage.removeItem('username');
       $location.path('/login');

@@ -22,6 +22,7 @@ module.exports = function(config) {
       'client/bower_components/angular-animate/angular-animate.min.js',
       'client/bower_components/angular-ui-router/release/angular-ui-router.min.js',
       'client/bower_components/angular-md5/angular-md5.min.js',
+      'client/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       'client/helpers/*.js',
       'client/app/**/*.js',

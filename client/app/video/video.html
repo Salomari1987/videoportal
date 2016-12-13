@@ -1,15 +1,18 @@
 <div class="row text-center">
-		    <h3 >{{video.name}}</h3>
+	<h3 >{{video.name}}</h3>
 </div>
-<div class="col-xs-2"></div>
-<div class="col-xs-8">
-		<videogular class="embed-responsive embed-responsive-16by9" vg-theme="video.theme.url">
-	        <vg-media class="embed-responsive-item" style="background:black;" vg-src="video.sources" vg-native-controls="true">
-	        </vg-media>
-	    </videogular>
 
+<div class="col-xs-2"></div>
+
+<div class="col-xs-8">
+	<videogular class="embed-responsive embed-responsive-16by9" vg-theme="video.theme.url">
+        <vg-media class="embed-responsive-item" style="background:black;" vg-src="video.sources" vg-native-controls="true">
+        </vg-media>
+    </videogular>
 	</div>
 </div>
+
 <div class="col-xs-2">	    
-<span uib-rating ng-model="video.overallRating" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating" ng-click="rateVideo(video._id, video.overallRating)"></span>
-<p> {{video.description}} </p> </div>
+	<span uib-rating ng-model="video.overallRating" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating" ng-click="rateVideo(video._id, video.overallRating)"></span>
+	<p> {{video.description}} </p> 
+</div>

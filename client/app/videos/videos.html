@@ -2,7 +2,7 @@
 	<div infinite-scroll='data.loadMore()' infinite-scroll-disabled='data.busy' infinite-scroll-distance='1' class="row">
 	    <div ng-repeat='video in data.videos' class="col-sm-4" style="margin-top:10px;">
 		    <div class="text">
-			    <h5 >	<a ng-href="#/video/{{video._id}}" style="color:black;">{{video.name}}</a></h5>
+			    <h5 ><a ng-href="#/video/{{video._id}}" style="color:black;">{{video.name}}</a></h5>
 			</div>
 			<videogular class="embed-responsive embed-responsive-16by9" vg-theme="video.theme.url" vg-player-ready="onPlayerReady($API, $index)" vg-update-state="onUpdateState($state, $index)">
 		        <vg-media class="embed-responsive-item" style="background:black;" vg-src="video.source" vg-native-controls="true">
