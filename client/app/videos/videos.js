@@ -1,7 +1,6 @@
 angular.module('co.videos', ['ngSanitize', 'infinite-scroll', 'com.2fdevs.videogular'])
 
-.controller('VideosController', function ($scope, LazyLoading, Videos) {
-  
+.controller('VideosController', function ($scope, LazyLoading, Videos, HelperFuncs) {
   // Initialize data object on scope
   $scope.data = {};
   
@@ -41,8 +40,11 @@ angular.module('co.videos', ['ngSanitize', 'infinite-scroll', 'com.2fdevs.videog
   };
 
   // Send rating to rateVideo service to backend
-  $scope.rateVideo = function (id, value) {
-    Videos.rateVideo({videoId: id, rating: value});
+  $scope.rateVideo = function (i, id, value) {
+    Videos.rateVideo({videoId: id, rating: value})
+    .then(function (resp) {
+      $scope.data.videos[i].overallRating = Math.round(HelperFuncs.arrayAverage(resp.data.ratings));
+    })
   };
 })
 .factory('LazyLoading', function($sce, HelperFuncs, Videos) {

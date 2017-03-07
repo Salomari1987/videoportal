@@ -8,7 +8,7 @@
 		        <vg-media class="embed-responsive-item" style="background:black;" vg-src="video.source" vg-native-controls="true">
 		        </vg-media>
 		    </videogular>
-		    <span uib-rating ng-model="video.overallRating" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating" ng-click="rateVideo(video._id, video.overallRating)"></span>
+		    <span uib-rating ng-model="video.overallRating" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating" ng-click="rateVideo($index, video._id, video.overallRating)"></span>
 		</div>
     </div>
     <div ng-show='data.busy'>Loading data...</div>
